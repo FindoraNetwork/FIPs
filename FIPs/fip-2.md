@@ -36,7 +36,7 @@ The privacy-preserving protocols on the Findora blcokchain, one based on the Max
     - It is permitted to hide the amount of inspectable assets, but it is not permitted to hide the asset type of inspectable assets. This is done by preventing new asset-type-hidden inspectable assets from being created on the UTXO chain.
     - For inspectable assets, the confidential transactions will be required to attach an "inspector's memo" and a matrix sigma proof showing that the inspector's memo correctly encrypts the information of the inputs and outputs of this transaction, which enables inspection.
     
-- **The Zerocash construction (triple masking):** The existing triple masking protocol will no longer accept inspectable assets. To transfer inspectable assets, users need to use "inspectable triple masking", which is a new set of zero-knowledge proof protocols built off Jubjub-Rescue hybrid encryption, a binary-checking-friendly TurboPlonk in Findora, and Bulletproofs. The inspectable triple masking has additional requirements for the transactions, as follows.
+- **The Zerocash construction (triple masking):** The existing triple masking protocol will no longer accept inspectable assets. To transfer inspectable assets, users need to use "inspectable triple masking", which is a new set of zero-knowledge proof protocols built off Jubjub-Rescue hybrid encryption, a binary-testing-friendly TurboPlonk in Findora, and Bulletproofs. The inspectable triple masking has additional requirements for the transactions, as follows.
     - The inspectable triple masking takes as input "the inspector's memo" and verifies that it can be correctly decrypted and it matches the masked information. The inspector's memo uses hybrid encryption, which consists of a point in Jubjub and some ciphertexts encrypted via Rescue-CTR. The zero-knowledge proof in TurboPlonk takes the input and a random linear combination of the ciphertexts (leveraging the Fiat-Shamir transform) as input and performs such verification.
     - A restriction is added to the Maxwell-Zerocash switching protocol, which prohibits switching an inspectable Zerocash asset to a Maxwell asset that hides the asset type.
     - The existing triple masking protocol declines to handle inspectable assets, but the inspectable protocol can handle both existing assets and inspectable assets.
@@ -88,9 +88,9 @@ To avoid this bottleneck, the inspector's memo in the Zerocash construction will
 
 We use SNARK-friendly hybrid encryption in the Zerocash construction to encrypt the inspector's memo.
 
-### Binary-checking-friendly TurboPlonk
+### Binary-testing-friendly TurboPlonk
 
-Findora uses a variant of TurboPlonk that is binary-checking-friendly. This serves as the core building block of the Zerocash construction as a general-prupose proof system. This variant follows the standard recipe of customizing TurboPlonk. It has five wires, thirteen selectors, high degrees, and additional polynomial identity constraints. It includes customized gates for Rescue and boolean testing. This makes it suitable to prove statements in time severalfold smaller than a non-customized proof system. 
+Findora uses a variant of TurboPlonk that is binary-testing-friendly. This serves as the core building block of the Zerocash construction as a general-prupose proof system. This variant follows the standard recipe of customizing TurboPlonk. It has five wires, thirteen selectors, high degrees, and additional polynomial identity constraints. It includes customized gates for Rescue and boolean testing. This makes it suitable to prove statements in time severalfold smaller than a non-customized proof system. 
 
 We use TurboPlonk in the Zerocash construction to perform the checking of the inspector's memo as well as carrying out the rest of the protocol in the Zerocash construction.
 
