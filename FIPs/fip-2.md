@@ -109,4 +109,4 @@ We have preliminary benchmark result for inspectable Maxwell assets. In the Maxw
 
 
 ## Copyright
-Copyright and related rights waived via [CC0](../LICENSE.md).
+Copyright and related rights waived via [CC0](../LICENSE).

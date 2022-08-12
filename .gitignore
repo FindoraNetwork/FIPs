@@ -1,0 +1,8 @@
+.DS_Store
+**/*~
+**/.vscode
+**/__pycache__
+.idea
+*.tar.gz
+nohup.out
+*.tmp
