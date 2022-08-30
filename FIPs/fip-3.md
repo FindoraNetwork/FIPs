@@ -2,7 +2,7 @@
 fip: 3
 title: Zero-Knowledge Decentralized ID (zkDID)
 author: Discreet Labs
-discussions-to: 
+discussions-to: https://discord.com/channels/789009413976883220/1014259928896114768
 type: Standards Track
 category: Core
 status: Draft
