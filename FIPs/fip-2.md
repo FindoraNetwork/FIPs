@@ -2,7 +2,7 @@
 fip: 2
 title: Auditable Privacy-Preserving Assets
 author: Discreet Labs Crypto Team
-discussions-to: 
+discussions-to: https://discord.com/channels/789009413976883220/1014281214951170138
 type: Standards Track
 category: Core
 status: Draft
